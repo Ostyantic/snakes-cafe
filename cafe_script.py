@@ -1,8 +1,9 @@
 def main():
-    menu = """**************************************
-**    Welcome to the Snakes Cafe!   **
+    user_name = input("Hello! What is your name? ")
+    menu = f"""**************************************
+**    Welcome to the Snakes Cafe,   **
+**            {user_name}!         
 **    Please see our menu below.    **
-**
 ** To quit at any time, type "quit" **
 **************************************
 
@@ -29,13 +30,22 @@ Drinks
 ------
 Coffee
 Tea
-Unicorn Tears
-
-***********************************
-** What would you like to order? **
-***********************************"""
+Unicorn Tears"""
 
     print(menu)
+    user_order = {
+        "Appetizers": [],
+        "Entrees": [],
+        "Desserts": [],
+        "Drinks": []
+    }
+    order = input("""***********************************
+** What would you like to order? **
+***********************************
+""")
+
+    # while order != 'quit':
+    #     order
 
 
 if __name__ == "__main__":
