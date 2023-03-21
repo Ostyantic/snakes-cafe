@@ -1,9 +1,9 @@
 def main():
-    '''
+    """
     Snakes Cafe - This script prints out a menu to the
     customer, asking their name and taking their order.
     Only items listed in the cafe menu can be selected.
-    '''
+    """
 
     customer_name = input("Hello! What is your name? ")
     menu = f"""*****************************************
