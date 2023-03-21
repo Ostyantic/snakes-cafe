@@ -1,11 +1,18 @@
 def main():
-    user_name = input("Hello! What is your name? ")
-    menu = f"""**************************************
-**    Welcome to the Snakes Cafe,   **
-**            {user_name}!         
-**    Please see our menu below.    **
-** To quit at any time, type "quit" **
-**************************************
+    '''
+    Snakes Cafe - This script prints out a menu to the
+    customer, asking their name and taking their order.
+    Only items listed in the cafe menu can be selected.
+    '''
+
+    customer_name = input("Hello! What is your name? ")
+    menu = f"""*****************************************
+**    Welcome to the Snakes Cafe,      **
+**            {customer_name}!         
+**     Please see our menu below.      **
+**     To view your order and exit     **
+**   the cafe, please type "Checkout"  **
+*****************************************
 
 Appetizers
 ----------
@@ -50,16 +57,14 @@ Unicorn Tears"""
         "unicorn tears": 0,
     }
 
-    customer_order = {
-
-    }
+    customer_order = {}
 
     order = input("""***********************************
 ** What would you like to order? **
 ***********************************
 """)
 
-    while order != "quit":
+    while order.lower() != "quit":
         # print(Menu.keys())
         if order.lower() in Menu:
 
@@ -71,6 +76,22 @@ Unicorn Tears"""
             print(customer_order)
             order = input(f"""You have ordered {customer_order[order.lower()]} order(s) of {order}. 
 Anything else? """)
+        elif order.lower() == "checkout":
+            print(f"""
+***********************************
+**         Order Summary         **
+**                               **
+**         Thank You For         **
+**        Your Business!!!       **
+***********************************
+
+Customer: {customer_name}
+""")
+            for item, qty in customer_order.items():
+                print(qty, item)
+
+            order = "quit"
+
         else:
             order = input(f"{order} doesn't exist in our menu, please choose another item. ")
 
